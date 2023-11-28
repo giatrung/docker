@@ -7,8 +7,9 @@ services:
     container_name: ${APP_NAME}-app
     volumes:
       - ../:/var/www/html:cached
-      - ./sites.conf/:/etc/apache2/sites.conf
+      - ./sites-enabled/:/etc/apache2/sites-enabled
       - ./php/xdebug.ini:/usr/local/etc/php/conf.d/xdebug.ini
+      - ./php/php.ini:/usr/local/etc/php/php.ini
     ports:
       - 80:80
     tty: true
